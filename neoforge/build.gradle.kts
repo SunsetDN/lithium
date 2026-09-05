@@ -34,6 +34,10 @@ project.sourceSets {
 }
 
 repositories {
+    // DNCity: needed to resolve net.caffeinemc:mixin-config-plugin (published there once, see
+    // ../components/mixin-config-plugin/build.gradle's comment) as a plain compileOnly dependency
+    // below, same reasoning as ../settings.gradle.kts's mavenLocal() addition.
+    mavenLocal()
     maven("https://maven.pkg.github.com/ims212/Forge_Fabric_API") {
         credentials {
             username = "IMS212"
