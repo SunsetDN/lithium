@@ -1,10 +1,13 @@
+// AGENT-DONE(codex): lithium-mixin-plugin-bootstrap
 import me.modmuss50.mpp.ReleaseType
 
 plugins {
     id("idea")
     id("net.neoforged.moddev") version "2.0.42-beta"
     id("java-library")
-    id("net.caffeinemc.mixin-config-plugin") version ("1.0-SNAPSHOT")
+    // The version is declared once by the root build. Repeating it here fails when the plugin is
+    // supplied by pluginManagement.includeBuild because it is already on the classpath.
+    id("net.caffeinemc.mixin-config-plugin")
 }
 
 val MINECRAFT_VERSION: String by rootProject.extra
